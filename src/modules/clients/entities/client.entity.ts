@@ -1,0 +1,18 @@
+export interface Client {
+  id: string;
+  nom: string;
+  prenom?: string;
+  type_client: 'personne_physique' | 'entreprise' | 'organisation';
+  email?: string;
+  telephone?: string;
+  adresse?: string;
+  code_postal?: string;
+  ville?: string;
+  pays?: string;
+  date_inscription: string;
+  statut: 'actif' | 'inactif' | 'suspendu';
+  type_entite?: string;
+  montant_total_facture: number;
+  created_at: string;
+  updated_at: string;
+}

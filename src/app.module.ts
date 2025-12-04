@@ -4,6 +4,11 @@ import { ThrottlerModule } from '@nestjs/throttler';
 import configuration from './config/configuration';
 import { SupabaseModule } from './modules/supabase/supabase.module';
 import { AuthModule } from './modules/auth/auth.module';
+import { EncryptionModule } from './modules/encryption/encryption.module';
+import { AuditModule } from './modules/audit/audit.module';
+import { StorageModule } from './modules/storage/storage.module';
+import { DossiersModule } from './modules/dossiers/dossiers.module';
+import { ClientsModule } from './modules/clients/clients.module';
 import { AppController } from './app.controller';
 
 @Module({
@@ -23,6 +28,11 @@ import { AppController } from './app.controller';
     ]),
     
     SupabaseModule,
+    EncryptionModule,
+    AuditModule,
+    StorageModule,
+    DossiersModule,
+    ClientsModule,
     AuthModule,
   ],
   controllers: [AppController],
