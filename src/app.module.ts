@@ -8,13 +8,13 @@ import { AppController } from './app.controller';
 
 @Module({
   imports: [
-    // Configuration globale
     ConfigModule.forRoot({
       isGlobal: true,
       load: [configuration],
+      envFilePath: '.env',
+      ignoreEnvFile: process.env.NODE_ENV === 'production',
     }),
     
-    // Rate limiting (protection brute force)
     ThrottlerModule.forRoot([
       {
         ttl: 60000,
@@ -22,10 +22,7 @@ import { AppController } from './app.controller';
       },
     ]),
     
-    // Database
     SupabaseModule,
-    
-    // Auth
     AuthModule,
   ],
   controllers: [AppController],
