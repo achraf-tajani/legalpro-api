@@ -8,8 +8,8 @@ export interface Procedure {
   deadline?: string;
   date_evenement?: string;
   date_completion?: string;
-  statut: 'programmée' | 'en_cours' | 'reportée' | 'complétée' | 'annulée';
-  priorite: 'basse' | 'normale' | 'haute' | 'critique';
+  statut: 'scheduled' | 'in_progress' | 'postponed' | 'completed' | 'cancelled';
+  priorite: 'low' | 'normal' | 'high' | 'critical';
   tribunal?: string;
   juge_assigne?: string;
   salle?: string;

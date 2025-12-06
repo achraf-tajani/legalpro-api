@@ -35,11 +35,11 @@ export class UpdateProcedureDto {
   date_completion?: string;
 
   @IsOptional()
-  @IsEnum(['programmée', 'en_cours', 'reportée', 'complétée', 'annulée'])
+  @IsEnum(['scheduled', 'in_progress', 'postponed', 'completed', 'cancelled'])
   statut?: ProcedureStatut;
 
   @IsOptional()
-  @IsEnum(['basse', 'normale', 'haute', 'critique'])
+  @IsEnum(['low', 'normal', 'high', 'critical'])
   priorite?: ProcedurePriorite;
 
   @IsOptional()

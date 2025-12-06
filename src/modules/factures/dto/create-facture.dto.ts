@@ -1,6 +1,7 @@
+// src/modules/factures/dto/create-facture.dto.ts
 import { IsString, IsOptional, IsEnum, IsNumber, IsUUID, IsDateString } from 'class-validator';
 
-export type FactureStatut = 'brouillon' | 'envoyée' | 'payée' | 'en_retard' | 'annulée';
+export type FactureStatut = 'brouillon' | 'envoyee' | 'payee' | 'en_retard' | 'annulee';
 
 export class CreateFactureDto {
   @IsUUID()
@@ -17,19 +18,19 @@ export class CreateFactureDto {
 
   @IsOptional()
   @IsNumber()
-  taux_tva?: number = 20;
+  taux_tva?: number;
 
   @IsOptional()
   @IsNumber()
-  reduction?: number = 0;
+  reduction?: number;
 
   @IsOptional()
   @IsDateString()
   date_echeance?: string;
 
   @IsOptional()
-  @IsEnum(['brouillon', 'envoyée', 'payée', 'en_retard', 'annulée'])
-  statut?: FactureStatut = 'brouillon';
+  @IsEnum(['brouillon', 'envoyee', 'payee', 'en_retard', 'annulee'])
+  statut?: FactureStatut;
 
   @IsOptional()
   @IsString()

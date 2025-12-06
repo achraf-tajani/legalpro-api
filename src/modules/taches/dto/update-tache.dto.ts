@@ -15,11 +15,11 @@ export class UpdateTacheDto {
   description?: string;
 
   @IsOptional()
-  @IsEnum(['basse', 'normale', 'haute', 'critique'])
+  @IsEnum(['low', 'normal', 'high', 'critical'])
   priorite?: TachePriorite;
 
   @IsOptional()
-  @IsEnum(['non_commencée', 'en_cours', 'en_attente', 'complétée', 'annulée'])
+  @IsEnum(['not_started', 'in_progress', 'pending', 'completed', 'cancelled'])
   statut?: TacheStatut;
 
   @IsOptional()

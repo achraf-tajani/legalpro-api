@@ -59,11 +59,18 @@ export class FacturesController {
     return this.facturesService.findById(id);
   }
 
-  @Post()
-  async create(@Body() createFactureDto: CreateFactureDto) {
-    return this.facturesService.create(createFactureDto);
+@Post()
+async create(@Body() createFactureDto: CreateFactureDto) {
+  return this.facturesService.create(createFactureDto);
+}
+  @Post('test')
+  async testBody(@Body() body: any) {
+    console.log('=== RAW BODY ===');
+    console.log(body);
+    console.log('id_dossier:', body.id_dossier);
+    console.log('id_client:', body.id_client);
+    return { received: body };
   }
-
   @Put(':id')
   async update(
     @Param('id') id: string,

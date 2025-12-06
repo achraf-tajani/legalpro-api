@@ -9,7 +9,7 @@ export interface Facture {
   reduction: number;
   date_emission: string;
   date_echeance?: string;
-  statut: 'brouillon' | 'envoyée' | 'payée' | 'en_retard' | 'annulée';
+  statut: 'brouillon' | 'envoyee' | 'payee' | 'en_retard' | 'annulee';
   methode_facturation?: string;
   mode_paiement?: string;
   moyen_paiement?: string;

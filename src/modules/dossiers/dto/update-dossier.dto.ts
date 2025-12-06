@@ -19,7 +19,7 @@ export class UpdateDossierDto {
   domaine?: string;
 
   @IsOptional()
-  @IsEnum(['ouvert', 'en_cours', 'suspendu', 'clos', 'archivé'])
+  @IsEnum(['ouvert', 'en_cours', 'suspendu', 'clos', 'archive'])
   statut?: DossierStatut;
 
   @IsOptional()

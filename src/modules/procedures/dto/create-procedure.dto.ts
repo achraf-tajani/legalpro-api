@@ -1,7 +1,7 @@
 import { IsString, IsOptional, IsEnum, IsNumber, IsUUID, IsDateString } from 'class-validator';
 
-export type ProcedureStatut = 'programmée' | 'en_cours' | 'reportée' | 'complétée' | 'annulée';
-export type ProcedurePriorite = 'basse' | 'normale' | 'haute' | 'critique';
+export type ProcedureStatut = 'scheduled' | 'in_progress' | 'postponed' | 'completed' | 'cancelled';
+export type ProcedurePriorite = 'low' | 'normal' | 'high' | 'critical';
 
 export class CreateProcedureDto {
   @IsUUID()
@@ -31,12 +31,12 @@ export class CreateProcedureDto {
   date_evenement?: string;
 
   @IsOptional()
-  @IsEnum(['programmée', 'en_cours', 'reportée', 'complétée', 'annulée'])
-  statut?: ProcedureStatut = 'programmée';
+  @IsEnum(['scheduled', 'in_progress', 'postponed', 'completed', 'cancelled'])
+  statut?: ProcedureStatut = 'scheduled';
 
   @IsOptional()
-  @IsEnum(['basse', 'normale', 'haute', 'critique'])
-  priorite?: ProcedurePriorite = 'normale';
+  @IsEnum(['low', 'normal', 'high', 'critical'])
+  priorite?: ProcedurePriorite = 'normal';
 
   @IsOptional()
   @IsString()

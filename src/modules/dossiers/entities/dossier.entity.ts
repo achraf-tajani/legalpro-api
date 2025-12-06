@@ -4,7 +4,7 @@ export interface Dossier {
   description?: string;
   type: string;
   domaine?: string;
-  statut: 'ouvert' | 'en_cours' | 'suspendu' | 'clos' | 'archivé';
+  statut: 'ouvert' | 'en_cours' | 'suspendu' | 'clos' | 'archive';
   priorite: 'basse' | 'normale' | 'haute' | 'critique';
   date_creation: string;
   date_modification: string;

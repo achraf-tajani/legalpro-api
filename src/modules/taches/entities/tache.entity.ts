@@ -3,8 +3,8 @@ export interface Tache {
   id_dossier: string;
   titre: string;
   description?: string;
-  priorite: 'basse' | 'normale' | 'haute' | 'critique';
-  statut: 'non_commencée' | 'en_cours' | 'en_attente' | 'complétée' | 'annulée';
+  priorite: 'low' | 'normal' | 'high' | 'critical';
+  statut: 'not_started' | 'in_progress' | 'pending' | 'completed' | 'cancelled';
   date_creation: string;
   date_echeance?: string;
   assigne_a?: string;

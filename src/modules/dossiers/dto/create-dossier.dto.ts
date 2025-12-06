@@ -1,6 +1,6 @@
 import { IsString, IsOptional, IsEnum, IsNumber, IsUUID } from 'class-validator';
 
-export type DossierStatut = 'ouvert' | 'en_cours' | 'suspendu' | 'clos' | 'archivé';
+export type DossierStatut = 'ouvert' | 'en_cours' | 'suspendu' | 'clos' | 'archive';
 export type DossierPriorite = 'basse' | 'normale' | 'haute' | 'critique';
 export type DossierConfidentialite = 'public' | 'prive' | 'confidentiel';
 
@@ -20,7 +20,7 @@ export class CreateDossierDto {
   domaine?: string;
 
   @IsOptional()
-  @IsEnum(['ouvert', 'en_cours', 'suspendu', 'clos', 'archivé'])
+  @IsEnum(['ouvert', 'en_cours', 'suspendu', 'clos', 'archive'])
   statut?: DossierStatut = 'ouvert';
 
   @IsOptional()
@@ -44,9 +44,9 @@ export class CreateDossierDto {
   confidentialite?: DossierConfidentialite = 'confidentiel';
 
   @IsOptional()
-  @IsUUID()
+  @IsUUID('all')
   avocat_assigne?: string;
 
-  @IsUUID()
+  @IsUUID('all')
   id_client: string;
 }

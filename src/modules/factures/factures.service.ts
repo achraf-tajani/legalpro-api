@@ -78,7 +78,7 @@ export class FacturesService {
     const facture = await this.findById(id);
     
     return this.facturesRepository.update(id, {
-      statut: 'payée',
+      statut: 'payee',
       montant_paye: montantPaye || facture.montant_ttc,
       date_paiement: new Date().toISOString(),
     });

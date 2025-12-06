@@ -1,7 +1,7 @@
 import { IsString, IsOptional, IsEnum, IsNumber, IsUUID, IsDateString } from 'class-validator';
 
-export type TacheStatut = 'non_commencée' | 'en_cours' | 'en_attente' | 'complétée' | 'annulée';
-export type TachePriorite = 'basse' | 'normale' | 'haute' | 'critique';
+export type TacheStatut = 'not_started' | 'in_progress' | 'pending' | 'completed' | 'cancelled';
+export type TachePriorite = 'low' | 'normal' | 'high' | 'critical';
 
 export class CreateTacheDto {
   @IsUUID()
@@ -15,12 +15,12 @@ export class CreateTacheDto {
   description?: string;
 
   @IsOptional()
-  @IsEnum(['basse', 'normale', 'haute', 'critique'])
-  priorite?: TachePriorite = 'normale';
+  @IsEnum(['low', 'normal', 'high', 'critical'])
+  priorite?: TachePriorite = 'normal';
 
   @IsOptional()
-  @IsEnum(['non_commencée', 'en_cours', 'en_attente', 'complétée', 'annulée'])
-  statut?: TacheStatut = 'non_commencée';
+  @IsEnum(['not_started', 'in_progress', 'pending', 'completed', 'cancelled'])
+  statut?: TacheStatut = 'not_started';
 
   @IsOptional()
   @IsDateString()

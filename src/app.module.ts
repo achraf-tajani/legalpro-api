@@ -7,6 +7,7 @@ import { AuthModule } from './modules/auth/auth.module';
 import { EncryptionModule } from './modules/encryption/encryption.module';
 import { AuditModule } from './modules/audit/audit.module';
 import { StorageModule } from './modules/storage/storage.module';
+import { AvocatsModule } from './modules/avocats/avocats.module';
 import { DossiersModule } from './modules/dossiers/dossiers.module';
 import { ClientsModule } from './modules/clients/clients.module';
 import { ProceduresModule } from './modules/procedures/procedures.module';
@@ -38,6 +39,7 @@ import { AppController } from './app.controller';
     EncryptionModule,
     AuditModule,
     StorageModule,
+    AvocatsModule,
     DossiersModule,
     ClientsModule,
     ProceduresModule,
